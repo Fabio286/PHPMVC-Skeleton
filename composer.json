@@ -1,0 +1,6 @@
+{
+    "require": {
+        "klein/klein": "^2.1",
+        "j4mie/idiorm": "^1.5"
+    }
+}
