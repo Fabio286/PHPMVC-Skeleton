@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
-require_once __DIR__ . '/config/constants.php';
+require_once './vendor/autoload.php';
+require_once './config/constants.php';
 
 $base  = dirname($_SERVER['PHP_SELF']);
 
@@ -12,7 +12,7 @@ if(ltrim($base, '/')){
 $klein = new \Klein\Klein();
 
 $klein->respond(function ($request, $response, $service, $app) use ($klein) {
-   require_once __DIR__ . '/config/database.php';
+   require_once './config/database.php';
    
    // Handle exceptions => flash the message and redirect to the referrer
    $klein->onError(function ($klein, $err_msg) {
