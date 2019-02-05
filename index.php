@@ -17,7 +17,7 @@ $klein->respond(function ($request, $response, $service, $app) use ($klein) {
    // Handle exceptions => flash the message and redirect to the referrer
    $klein->onError(function ($klein, $err_msg) {
        $klein->service()->flash($err_msg);
-       $klein->service()->back();
+       //$klein->service()->back();
    });
 
    $service->escape = function ($str) {
@@ -28,7 +28,12 @@ $klein->respond(function ($request, $response, $service, $app) use ($klein) {
 
 });
 
-// Carica i controller
+// Carica i componenti Core
+foreach(glob('core/*.php') as $file) {
+   require_once $file;
+}
+
+// Carica i Controller
 foreach(glob('controllers/*.php') as $file) {
    include_once $file;
 }

@@ -1,10 +1,11 @@
-<?php
-$db = $app->db->main;
+<?php namespace System\Model;
+Class Demo_model extends Model{
 
-ORM::configure(array(
-   'connection_string' => 'mysql:host='.$db['host'].';dbname='.$db['dbname'],
-   'username' => $db['user'],
-   'password' => $db['pwd'],
-   'logging' => true
-));
+   public function getUsers(){
+      $result = \ORM::for_table('user')
+         ->find_many();
+
+      return $result;
+   }
+}
 

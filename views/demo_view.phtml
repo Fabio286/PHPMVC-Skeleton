@@ -15,6 +15,9 @@
          <h1><?= $this->title;?></h1>
          <p><?= $this->content;?></p>
          <p>Escaped: <?= $this->escape('<br>');?></p>
+         <ul><?php foreach ($this->users as $user): ?>
+            <li><?= $user['User'].'@'.$user['Host'] ?></li>
+         <?php endforeach?></ul>
       </section>
       <footer id="footer"></footer>
    </div>
